@@ -28,6 +28,11 @@ def is_transcation_success(money_received,drink_cost):
         print("Sorry that's not enough money. Money's refunded")
         return False
 
+def make_coffee(drink_name,order_ingredients):
+    for item in order_ingredients:
+        resources[item]-=order_ingredients[item]
+    print(f"Here is your {order}☕")
+
 is_on=True
 profit=0
 while is_on:
@@ -44,5 +49,6 @@ while is_on:
         drink=menu[order]
         if resource_check(drink["ingredients"]):
             payment=process_coins()
-            is_transcation_success(payment,drink["cost"])
+            if is_transcation_success(payment,drink["cost"]):
+                make_coffee(order,drink["ingredients"])
 
