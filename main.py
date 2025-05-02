@@ -23,7 +23,7 @@ def is_transcation_success(money_received,drink_cost):
         print("Please Enjoy your drink.")
         global profit #as the profit is declared on global scope and we cannot directly use it here
                       #So we need to call global profit to make sure that can be used as local aswell.
-        profit+=money_received
+        profit=profit+money_received-change
         return True
     else:
         print("Sorry that's not enough money. Money's refunded")
