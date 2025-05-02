@@ -1,4 +1,5 @@
 from Menu import menu, resources
+from art import coffee_art
 def resource_check(order_ingredients):
     for item in order_ingredients:
         if order_ingredients[item]>=resources[item]:
@@ -37,6 +38,7 @@ is_on=True
 profit=0
 while is_on:
     print("\n"*2)
+    print(coffee_art)
     order=input("Please Enter your choice of drink (espresso/latte/cappuccino):").lower()
     if order=="off":
         is_on=False
